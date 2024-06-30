@@ -33,9 +33,9 @@ class SwaggerConfig {
     @Bean
     fun openApi(): OpenAPI {
         val info = Info()
-        info.title = "새벽시장 API"
+        info.title = "채팅 API"
         info.version = "1.0"
-        info.description = "새벽시장, 영업지원 API 문서입니다."
+        info.description = "채팅 API 문서입니다."
 
         return OpenAPI()
             .addServersItem(Server().url("http://localhost:8080").description("LOCAL"))
