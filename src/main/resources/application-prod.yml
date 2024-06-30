@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chat
+      username: ENC(EIryQ6pVjmzQ5td6Tl8zgKBBziJWQTlR)
+      password: ENC(UUthGwquTnIIXj58mjpg/g==)
+
+profiles:
+  active: prod
+springdoc:
+  api-docs:
+    path: /chat/v3/api-docs #host:port/v3/api-docs로 접근하면 openapi 정보를 다 확인할 수 있어서 비활성화 하려고 했는데 비활성화 설정이 안돼서 기본경로를 변경함
+  packages-to-scan: com.seona.chat.backend.api # 지정된 경로 안의 모든 api정보가 표기됨, 설정정보만 표기될 수 있게 변경 필요함
+  swagger-ui:
+    path: /chat-swagger.html #스웨거 접근 경로 설정을 별도로 함
+  jpa:
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        globally_quoted_identifiers_skip_column_definitions: true
